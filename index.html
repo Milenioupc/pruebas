@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huariques Pucallpa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif; /* Cambiado a una fuente más moderna y legible */
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        header {
+            background-image: url('https://braunmarketingandconsulting.es/wp-content/uploads/principal.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Mejora la legibilidad del texto */
+            z-index: 1;
+        }
+
+        header h1 {
+            z-index: 2;
+            font-size: 2.5em;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 1.2em;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px auto; /* Centrado automático */
+            background-color: #eeb573;
+            border-radius: 10px;
+            max-width: 1200px; /* Controla el ancho máximo */
+        }
+
+        .restaurant-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Ajuste automático basado en el ancho */
+            gap: 20px;
+        }
+
+        .restaurant-item {
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+
+        .restaurant-images img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Huariques Pucallpa</h1>
+        <nav>
+            <button onclick="showSection('catalogo')">Catálogo</button> <!-- Cambiado a botones para mejorar la accesibilidad -->
+            <button onclick="showSection('reservas')">Reservas</button>
+        </nav>
+    </header>
+
+    <section id="catalogo" class="active">
+        <h2>Restaurantes Disponibles</h2>
+        <div class="restaurant-grid">
+            <div class="restaurant-item">
+                <h3>Restaurantes D'OXAS</h3>
+                <div class="restaurant-images">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK8RIaLycINy1GFX5Fc_-gs19ul2ta56wjpw&s" alt="Restaurante D'OXAS">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwAKx6uXdYozfLe_frhyhV24m5ebfTRW-X8w&s" alt="Restaurante D'OXAS">
+                </div>
+                <p><strong>Horario:</strong> Lunes a Viernes: 12:00 PM - 10:00 PM</p>
+                <p><strong>Dirección(D'Oxas):</strong> Antigua Yarinacocha Mz 181 Lt 6</p>
+                <p><strong>Dirección(D'Oxas Prime):</strong> Jirón Atahuallpa 578</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/doxaparrillasrestaurante/?locale=es_LA" target="_blank" rel="noopener noreferrer" aria-label="Facebook de D'OXAS"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/doxa_prime/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de D'OXAS"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <!-- Agrega aquí más elementos .restaurant-item siguiendo el mismo formato -->
+        </div>
+    </section>
+
+    <section id="reservas">
+        <h2>Formulario de Reserva</h2>
+        <form>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="restaurante">Restaurante:</label>
+            <select id="restaurante" name="restaurante" required>
+                <option value="">Seleccione un restaurante</option>
+                <!-- Opciones de restaurantes -->
+            </select>
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" name="fecha" required>
+            <label for="hora">Hora:</label
+            <input type="time" id="hora" name="hora" required>
+            <button type="submit">Reservar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Huariques Pucallpa. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function showSection(id) {
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
+</body>
+</html>
